@@ -228,10 +228,10 @@ SELECT
     u.*
 FROM
     user AS u
-    LEFT JOIN orders AS o ON u.user_id = o.user_id
+    LEFT JOIN orders AS ords ON u.user_id = ords.user_id
     LEFT JOIN like_res AS l ON u.user_id = l.user_id
     LEFT JOIN rate_res AS r ON u.user_id = r.user_id
 WHERE
-    o.orders_id IS NULL
+    ords.orders_id IS NULL
     AND l.like_res_id IS NULL
     AND r.rate_res_id IS NULL;
